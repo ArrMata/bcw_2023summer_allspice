@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS accounts(
 
 CREATE TABLE recipes(
   id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-  title VARCHAR(255) NOT NULL,
+  title VARCHAR(100) NOT NULL,
   instructions VARCHAR(650) NOT NULL,
   img VARCHAR(400) NOT NULL,
   category VARCHAR(300),
@@ -33,6 +33,6 @@ CREATE TABLE favorites (
   FOREIGN KEY (recipeId) REFERENCES recipes(id) ON DELETE CASCADE
 ) default charset utf8 COMMENT '';
 
-DROP TABLE recipe;
-
+DROP TABLE recipes;
 DROP TABLE ingredients;
+DROP TABLE favorites;

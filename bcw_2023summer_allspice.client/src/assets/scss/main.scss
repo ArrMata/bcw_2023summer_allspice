@@ -40,3 +40,11 @@ form:invalid button[type="submit"] {
   filter: grayscale(1);
   pointer-events: none;
 }
+
+// Custom SCSS
+
+@mixin label {
+  font-weight: 700;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+}
