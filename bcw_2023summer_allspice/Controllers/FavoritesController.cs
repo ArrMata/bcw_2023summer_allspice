@@ -28,6 +28,22 @@ namespace bcw_2023summer_allspice.Controllers
             {
                 return BadRequest(e.Message);
             }
-        } 
+        }
+
+        [Authorize]
+        [HttpDelete("{favoriteId}")]
+        public async Task<ActionResult<string>> DeleteFavorite(int favoriteId)
+        {
+            try
+            {
+                Account userInfo = await _auth0Provider.GetUserInfoAsync<Account>(HttpContext);
+                _favoritesService.DeleteFavorite(userInfo.Id, favoriteId);
+                return Ok("Deleted Favorite Recipe");
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
     }
 }

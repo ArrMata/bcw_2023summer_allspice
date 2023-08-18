@@ -6,4 +6,5 @@ namespace bcw_2023summer_allspice.Models
         public string AccountId { get; set; }
         public int RecipeId { get; set; }
     }
+    
 }

@@ -10,4 +10,9 @@ namespace bcw_2023summer_allspice.Models
         public string CreatorId { get; set; }
         public Profile Creator { get; set;}
     }
+
+    public class FavoriteRecipe : Recipe
+    {
+        public int FavoriteId { get; set; }
+    }
 }
